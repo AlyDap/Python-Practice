@@ -1,1 +1,0 @@
-# hanya untuk copas file
