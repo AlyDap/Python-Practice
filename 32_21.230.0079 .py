@@ -45,16 +45,18 @@ while (cek):
     edit = input('Edit data ketik [y/Y], jika tidak enter saja : ')
     if (edit == 'y' or edit == 'Y'):
 
+        nisnSiswa = input(
+            f'NISN Siswa sebelumnya {nisnSiswa} \nNISN siswa baru : ')
         namaSiswa = input(
-            f'Nama Siswa sebelumnya {namaSiswa} Nama siswa baru : ')
+            f'Nama Siswa sebelumnya {namaSiswa} \nNama siswa baru : ')
         nilaiAkhir = int(
-            input(f'Nilai Akhir sebelumnya {nilaiAkhir} baru : '))
+            input(f'Nilai Akhir sebelumnya {nilaiAkhir} \nNilai Akhir baru : '))
         tgl = int(
-            input(f'Tanggal Lahir (dd) sebelumnya {tgl} Tanggal Lahir baru : '))
+            input(f'Tanggal Lahir (dd) sebelumnya {tgl} \nTanggal Lahir baru : '))
         bln = int(
-            input(f'Bulan Lahir (mm) sebelumnya {bln} Bulan Lahir baru : '))
+            input(f'Bulan Lahir (mm) sebelumnya {bln} \nBulan Lahir baru : '))
         thn = int(
-            input(f'Tahun Lahir (YYYY) sebelumnya {thn} Tahun Lahir baru : '))
+            input(f'Tahun Lahir (YYYY) sebelumnya {thn} \nTahun Lahir baru : '))
 
         print('data berhasil diedit')
         print()
@@ -95,6 +97,7 @@ while (cek):
 
 
 print(f"{'No Urut':<13} {'NISN':<15} {'NAMA':<13} {'NILAI AKHIR':<13} {'TGL LAHIR'}")
+print(17*'----')
 
 for sis in data_siswa:
     KEY = sis
@@ -103,10 +106,9 @@ for sis in data_siswa:
     nilai_akhir = data_siswa[KEY]['nilai_akhir']
     tgl_lhr = data_siswa[KEY]['tgl_lhr']
     print(f"{KEY:<13} {nisn:<15} {nama:<13} {nilai_akhir:<13} {tgl_lhr}")
-print()
 print(17*'----')
 print()
-print(data_siswa)
-print()
-print(17*'----')
-print()
+# print(data_siswa)
+# print()
+# print(17*'----')
+# print()
