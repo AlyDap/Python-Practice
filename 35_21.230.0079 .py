@@ -11,12 +11,20 @@ fungsi1("joni")
 import string
 # menggunakan tye hint untuk mengetahui tipe data yang digunakan dalam fungsi
 
-def fungsi2(parameter:int) -> int:
- output = 2**parameter
- return output
 
-def fungsi3(parameter:string):
- print(parameter)
- 
+def fungsi2(parameter: int) -> int:
+    output = 2**parameter
+    return output
+
+
+def fungsi3(parameter: string):
+    print(parameter)
+
+
 print(fungsi2(4))
 fungsi3("ali")
+fungsi3('''
+halo guys
+        saya siapa
+   heheh
+        ''')
