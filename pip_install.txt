@@ -1,0 +1,5 @@
+list pip +> melihat list
+pip install pandas => 
+pip install openpyxl => membaca file excel
+pip intsall matplotlib => visualisasi data
+pip install numpy => visualisasi data
