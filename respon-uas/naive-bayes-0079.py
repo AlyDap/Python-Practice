@@ -7,28 +7,28 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score,precision_score,recall_score, f1_score, classification_report
 
 
-df=pd.read_excel('respon.xlsx','knn')
+df=pd.read_excel('respon.xlsx','nb')
 print(df)
 
 print()
 le = LabelEncoder()
-print(f'field Jarak dari Pusat Kota SEBELUM dilakukan label encoder\n {df["Jarak_dari_Pusat_Kota"]}')
+print(f'field Kecepatan Angin SEBELUM dilakukan label encoder\n {df["Kecepatan Angin"]}')
 
 print()
-df["Jarak_dari_Pusat_Kota"]=le.fit_transform(df["Jarak_dari_Pusat_Kota"])
-df["Tingkat_Kepopuleran"]=le.fit_transform(df["Tingkat_Kepopuleran"])
-df["Jenis_Tempat_Wisata"]=le.fit_transform(df["Jenis_Tempat_Wisata"])
-print(f'field Jarak dari Pusat Kota SETELAH dilakukan label encoder\n {df["Jarak_dari_Pusat_Kota"]}')
+df["Kecepatan Angin"]=le.fit_transform(df["Kecepatan Angin"])
+df["Suhu"]=le.fit_transform(df["Suhu"])
+df["Jenis Cuaca"]=le.fit_transform(df["Jenis Cuaca"])
+print(f'field Kecepatan Angin SETELAH dilakukan label encoder\n {df["Kecepatan Angin"]}')
 print()
 print(f'SEMUA field SETELAH dilakukan label encoder\n {df}')
 
-# X kapital bukan class label (bukan Jenis_Tempat_Wisata)
+# X kapital bukan class label (bukan Jenis Cuaca)
 X = df.iloc[:,0:2].values
 Y = df.iloc[:,2:3].values
 print('\n',X)
 print('\n',Y)
 
-X_train, X_test, y_train, y_test=train_test_split(X,df['Jenis_Tempat_Wisata'],test_size=0.2,random_state=10)
+X_train, X_test, y_train, y_test=train_test_split(X,df['Jenis Cuaca'],test_size=0.2,random_state=10)
 
 klasifikasi=MultinomialNB().fit(X_train,y_train)
 prediksi = klasifikasi.predict(X_test)
@@ -39,23 +39,25 @@ print()
 
 print(classification_report(y_test,prediksi,zero_division=0))
 print()
-# 2 1 0
-# 2 taman, 1 pantai, 0 gunung
+# rendah0, sedang1, tinggi2
+# dingin0, normal1, panas2
+# cerah0, hujan1, mendung2
+# tinggi panas? 2,2
 
-wisata=[[5, 7]]
-prediksi=klasifikasi.predict(wisata)
-prediksi_proba=klasifikasi.predict_proba(wisata)
-print(f'Hasil prediksi proba wisata: ',prediksi_proba)
+cuaca=[[2, 2]]
+prediksi=klasifikasi.predict(cuaca)
+prediksi_proba=klasifikasi.predict_proba(cuaca)
+print(f'Hasil prediksi proba cuaca: ',prediksi_proba)
 print()
 
 for cari in prediksi:
     if cari==2:
-        print('Hasil prediksi wisata = TAMAN')
+        print('Hasil prediksi cuaca = MENDUNG')
     elif cari==1:
-        print('Hasil prediksi wisata = PANTAI')
+        print('Hasil prediksi cuaca = HUJAN')
     else:
-        print('Hasil prediksi wisata = GUNUNG')
+        print('Hasil prediksi cuaca = CERAH')
 
 print()
-print(f'Hasil prediksi wisata: ',prediksi)
+print(f'Hasil prediksi cuaca: ',prediksi)
 print()
