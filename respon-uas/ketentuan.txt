@@ -1,0 +1,15 @@
+Respon Teori:
+- Lakukan Perhitunga Manual Untuk masing-masing sheet pada excel, disesuaikan dengan algoritmanya
+- Hitung Tingkat Akurasi melalui Confusion Matrix untuk algoritma Naive Bayes, K-NN
+- Hitung RSME untuk algoritma Simple Regresi Linear
+- untuk teori file dikumpulkan dalam bentuk *.pdf
+
+Respon Praktikum:
+- Buat pengkodean dgan python (boleh bebasis streamlit) untuk perhitungan pada masing-masing sheet excel
+- Hitung Tingkat Akurasi melalui Confusion Matrix untuk algoritma Naive Bayes, K-NN
+- Hitung RSME untuk algoritma Simple Regresi Linear
+- untuk praktikum file dikumpulkan dalam bentuk *.py
+
+Kisi-Kisi UAS:
+- seperti respon di atas
+- UAS open book dengan cara print manual materi tidak diperkenankan menggunakan softcopy
